@@ -36,7 +36,7 @@ public class CustomerServiceImpl implements CustomerService {
     public CustomerDTO getCustomer(Integer customerId) throws HnDBankException {
         Optional<Customer> optional = customerRespository.findById(customerId);
         Customer customer = optional.orElseThrow(() -> new HnDBankException("Service.CUSTOMER_NOT_FOUND"));
-//        Customer customer = new Customer();
+//      Customer customer = new Customer();
         CustomerDTO customerDto = new CustomerDTO();
         customerDto.setCustomerId(customer.getCustomerId());
         customerDto.setDateOfBirth(customer.getDateOfBirth());
